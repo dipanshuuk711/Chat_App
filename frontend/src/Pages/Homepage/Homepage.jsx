@@ -1,5 +1,7 @@
 import React from 'react'
 import { Box, Container, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
+import Login from '../../components/Authentication/Login/Login'
+import Signup from '../../components/Authentication/SignUp/Signup'
 
 export default function Homepage() {
      return (
@@ -20,16 +22,16 @@ export default function Homepage() {
                </Box>
                <Box bg='white' color={'black'} width={'100%'} borderRadius={"lg"} borderWidth={'1px'}>
                     <Tabs variant='soft-rounded' >
-                         <TabList>
-                              <Tab>Login</Tab>
-                              <Tab>Signup</Tab>
+                         <TabList mb='1em'>
+                              <Tab width="50%">Login</Tab>
+                              <Tab width="50%">Signup</Tab>
                          </TabList>
                          <TabPanels>
                               <TabPanel>
-                                   <p>Login</p>
+                                   <Login/>
                               </TabPanel>
                               <TabPanel>
-                                   <p>Signup</p>
+                                   <Signup/>
                               </TabPanel>
                          </TabPanels>
                     </Tabs>
