@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.App {
+     min-height: 100vh;
+     display: flex;
+     background-repeat: repeat-x;
+     background-image: url('../src/assets/monochrome-vector-seamless-pattern-speech-bubbles-form-oval-cloud-rectangle_387335-1199.avif');
+}
