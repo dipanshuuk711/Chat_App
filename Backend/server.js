@@ -2,7 +2,10 @@ import express from "express";
 import { chats } from './data/data.js'
 import cors from 'cors'
 import { config } from "dotenv";
+import connectDB from "./config/db.js";
+import color from 'colors'
 config();
+connectDB();
 
 const app = express();
 app.use(express.json());
@@ -23,5 +26,5 @@ app.get('/api/chat/:id', (req, res) => {
 });
 
 app.listen(process.env.PORT, () => {
-     console.log("Server is running on port 3000");
+     console.log("Server is running on port 3000".red.bold.underline);
 });
