@@ -1,9 +1,9 @@
 import express from "express";
-import { chats } from './data/data.js'
+import userRoutes from "./Routes/userRoutes.js";
 import cors from 'cors'
 import { config } from "dotenv";
 import connectDB from "./config/db.js";
-import color from 'colors'
+import { errorHandler, notFound } from "./Middleware/errorHandler.js";
 config();
 connectDB();
 
@@ -15,16 +15,11 @@ app.get('/', (req, res) => {
      res.send('Hello World');
 })
 
-app.get('/api/chats', (req, res) => {
-     res.send(chats)
-})
+app.use("/api/user", userRoutes);
 
-app.get('/api/chat/:id', (req, res) => {
-     const id = req.params.id;
-     const chat = chats.find((c) => c._id === id);
-     res.send(chat)
-});
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(process.env.PORT, () => {
-     console.log("Server is running on port 3000".red.bold.underline);
+     console.log("Server is running on port 3000".blue.bold);
 });

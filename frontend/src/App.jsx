@@ -4,7 +4,6 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { Route, Routes } from 'react-router-dom'
 import Homepage from './Pages/Homepage/Homepage.jsx'
 import Chatpage from './Pages/Chatpage/Chatpage.jsx'
-
 function App() {
   return (
     <ChakraProvider>

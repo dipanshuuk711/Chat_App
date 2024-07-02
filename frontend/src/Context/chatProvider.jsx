@@ -1,4 +1,3 @@
-import { set } from 'mongoose';
 import { createContext, useContext, useEffect, useState } from 'react'
 
 const ChatContext = createContext();
@@ -12,7 +11,7 @@ const ChatProvider = ({ children }) => {
           setUser(setUser);
 
           if (!userInfo) {
-               history.push("/")
+               history.pushState("/",'/')
           }
      }, [user])
 
